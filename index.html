@@ -5,10 +5,6 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title>pacheko mall-shop anytime anywhere</title>
-	<!-- MDB icon -->
-	<!-- <link rel="icon" href="img/mdb-favicon.ico" type="image/x-icon"> -->
-	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
 	<!-- Google Fonts Roboto -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
@@ -26,12 +22,12 @@
 	  <div class="container">
 	  	<div class="row">
 	  		<div class="col-md-10 col-sm-12 offset-md-2 ">
-				<h2><b>SQL Optimization Techniques</b></h2>
+				<h2><b>SQL Optimization Techniques</b></h2><hr>
 				<p>
-					<p>Found it good to put this up just to share with fellow SQL developers , data enthusistas and to all those who aspire to delve in the field of SELECTS, INSERTS, UPDATES...</p>
-					<p>To begin with, SQL query optimization refers to writing thoughtful queries that are less of a performance bottleneck to a database since even a minor chage is a positive  dramatic impact on the performance of a database infrastructures in most cases where there are intense write operations.</p>
+					<p>Found it good to put this up just to share with fellow SQL developers , data enthusiasts and to all those who aspire to delve in the field of SELECTS, INSERTS, UPDATES... what I feel to be on the table.</p>
+					<p>To begin with, SQL query optimization refers to writing thoughtful queries that are less of a performance bottleneck to a database. Note that a minor change may have a positive  dramatic impact on the performance of a database infrastructures oftenly in  cases where there are intense write operations.</p>
 					<p>Here are some of the technniques I obtained through personal experience working with MySQL and by wading through numerous pages over the web to sample them to generate a consumable summary. The sampled techniques below will add atleast an impact to the optimality of your basic to advanced queries while working through your day to day queries.</p>
-					<h6><b><i>NOTE: The research is subject to critics</i></b></h6><br>	
+					<h6><b><i>NOTE: This research is subject to critics</i></b></h6><br>	
 
 					<h4>1. Indexing for a quick access</h4>
 					<p>Indexing in SQL Server helps retrieve data more quickly from a table, thereby giving a tremendous boost to SQL query performance. Allow effective use of clustered and non-clustered indexes. Understand the query’s intent and choose the right form for your scenario.</p>
@@ -46,7 +42,7 @@
 					<p>Avoid the use of <code>HAVING</code> clause for primary filters but instead use <code>WHERE</code> clause.</p>
 					<p><code>HAVING </code>statements are determined in the SQL operating order after <code>WHERE</code> statements. Therefore, it is quicker to execute the <code>WHERE</code> query.</p>
 
-					<h4>4.Avoid loops in query structures.</h4>
+					<h4>4.Minimize loops in query .</h4>
 					<p>Executing loops always consumes alot of system resources since the iterations are executed one at a time.</p>
 					Inefficient: <code>	for ($i = 0; $i < 10; $i++) {  
   $query = “INSERT INTO TBL (A,B,C) VALUES . . . .”;  
@@ -58,14 +54,14 @@ Efficient:<code>INSERT INTO TBL (A,B,C) VALUES (1,2,3), (4,5,6). . . .</code></p
 <p>Instead consider using <code>BULK INSERT</code> or using a temporary table for dumping massive data into the database.</p>
 					<h4>5.Subqueries.</h4>
 					<p> Avoid the use of correlated subqueries since the execution of the inner query depends on the parent query hence searches the entire table row by row before returning the results.</p>
-					<p>This is quite common for most developers when using a <code>WHERE</code> clause instead of an <code>INNER JOIN</code>. Take a look at this:</p><code>SELECT c.Name, c.City,(SELECT CompanyName 
-					FROM Company WHERE ID = c.CompanyID) AS CompanyName FROM Customer c</code> instead of <code>SELECT c.Name, c.City, co.CompanyName FROM Customer c LEFT JOIN Company co   ON c.CompanyID = co.CompanyID</code>
+					<p>This is quite common for most developers when using a <code>WHERE</code> clause instead of an <code>INNER JOIN</code>. Take a look at this:</p><p><code>SELECT c.Name, c.City,(SELECT CompanyName 
+					FROM Company WHERE ID = c.CompanyID) AS CompanyName FROM Customer c</code> instead of <code>SELECT c.Name, c.City, co.CompanyName FROM Customer c LEFT JOIN Company co   ON c.CompanyID = co.CompanyID</code></p>
 
 					<h4>6.Matching Records.</h4> 
 					<p>Consider using <code>EXISTS()</code> function to check whether an element exist instead of using the <code>COUNT()</code> function. <code>EXISTS()</code> terminates the table scan immediately a column matches while a <code>COUNT()</code> will count all the rows in a given table.
 					Inefficient:<code>IF (SELECT COUNT(1) FROM EMPLOYEES...</code><br>
 					Efficient:<code>IF EXISTS(SELECT FIRSTNAME FROM EMPLOYEES...</code></p>
-					<h4>7. Use wildcards sparingly and cautiosly</h4>
+					<h4>7. Use wildcards sparingly and cautiously</h4>
 					<p>This may be much tied up to the kind of the result set of the query executed.
 					Consider a query that should retrieve all names ending with 'on' using two scenario of wildcards %on% and %on.</p>
 				</p>	
@@ -75,9 +71,9 @@ Efficient:<code>INSERT INTO TBL (A,B,C) VALUES (1,2,3), (4,5,6). . . .</code></p
 	  	<div class="col-md-2 offset-md-10">
 	  		Sources: 
 	  			<ul>
-	  				<ul><a href="https://www.sqlshack.com/query-optimization-techniques-in-sql-server-the-basics/">SQL Shack</a></ul>
-	  				<ul><a href="https://www.sisense.com/blog/8-ways-fine-tune-sql-queries-production-databases/">Sisense</a></ul>
-	  				<ul><a href="https://www.syncfusion.com/blogs/post/top-10-sql-query-optimization-techniques.aspx">Syncfusion</a></ul>
+	  				<a href="https://www.sqlshack.com/query-optimization-techniques-in-sql-server-the-basics/">SQL Shack |</a>
+	  				<a href="https://www.sisense.com/blog/8-ways-fine-tune-sql-queries-production-databases/">Sisense |</a>
+	  				<a href="https://www.syncfusion.com/blogs/post/top-10-sql-query-optimization-techniques.aspx">Syncfusion</a> and other sql articles
 
 
 	  			</ul>
